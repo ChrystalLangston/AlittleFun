@@ -1,7 +1,7 @@
 slot_machine = new function(){
-	this.maxPlays = 2;
+	this.MAX_PLAYS = 2;
 	this.user = {
-		lives: this.maxPlays,
+		lives: this.MAX_PLAYS,
 		result: "",
 		description: "",
 	};
@@ -9,12 +9,12 @@ slot_machine = new function(){
 	this.play = function(){
 			random = Math.random();
 			
-			if(random <= 0.4){
+			if(random < 0.4){
 				this.user.result = "winner";
 				this.user.description = "Yeah buddy - you's a winner!";
 				this.user.lives--;
 			}
-			else if (random > 0.4 && random <= 0.8){
+			else if (random < 0.8){
 				this.user.result = "loser";
 				this.user.description = "Sorry buddy... Better luck next time.";
 				this.user.lives--;
